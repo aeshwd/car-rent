@@ -1,0 +1,707 @@
+/* General styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    color: #333;
+}
+
+h1, h2, h3 {
+    color: #222;
+    margin-bottom: 10px;
+    font-weight: 700;
+}
+
+/* Hero Section with car background */
+.hero {
+    height: 100vh;
+    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), 
+                url('hero.jpeg') center/cover no-repeat;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    text-align: center;
+    flex-direction: column;
+    position: relative;
+    animation: fadeIn 1.5s ease-in;
+}
+
+.hero h1 {
+    font-size: 4rem;
+    letter-spacing: 2px;
+    margin-bottom: 20px;
+    z-index: 1;
+    color: white;
+}
+
+.hero p {
+    font-size: 1.5rem;
+    max-width: 600px;
+    line-height: 1.5;
+    margin-bottom: 50px;
+    z-index: 1;
+}
+
+.hero button {
+    padding: 15px 30px;
+    background-color: #FF6F61;
+    border: none;
+    color: white;
+    font-size: 1.2rem;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: transform 0.3s, background-color 0.3s;
+    z-index: 1;
+}
+
+.hero button:hover {
+    background-color: #FF4A3D;
+    transform: scale(1.1);
+}
+
+.hero::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0.2;
+    z-index: 0;
+}
+
+/* Keyframe animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* Marquee */
+marquee {
+    margin: 30px 0;
+    padding: 10px 0;
+}
+
+marquee img {
+    height: 50px;
+    margin: 0 20px;
+}
+
+
+/* About Us Section */
+.about {
+    padding: 60px 20px;
+    background-color: #fff;
+    text-align: center;
+    position: relative;
+}
+
+.about h2 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+    color: #222;
+    position: relative;
+    display: inline-block;
+    padding-bottom: 10px;
+    animation: fadeInDown 1s ease-in;
+}
+
+.about h2::after {
+    content: "";
+    width: 80px;
+    height: 4px;
+    background-color: #FF6F61;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    border-radius: 5px;
+}
+
+.about p {
+    max-width: 700px;
+    margin: 0 auto 40px auto;
+    line-height: 1.8;
+    font-size: 1.2rem;
+    color: #555;
+    animation: fadeInUp 1s ease-in;
+}
+
+/* About Us Grid with Features */
+.about-grid {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 30px;
+    margin-top: 40px;
+    animation: fadeIn 1.5s ease-in;
+}
+
+.about-grid-item {
+    width: 274px;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 15px;
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.about-grid-item:hover {
+    transform: translateY(-10px);
+    box-shadow: 0px 15px 20px rgba(0, 0, 0, 0.2);
+}
+
+.about-grid-item img {
+    width: 80px;
+    margin-bottom: 20px;
+}
+
+.about-grid-item h3 {
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+    color: #FF6F61;
+}
+
+.about-grid-item p {
+    font-size: 1.1rem;
+    color: #666;
+}
+
+/* Keyframes for animations */
+@keyframes fadeInDown {
+    0% {
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }  
+
+}
+
+   @keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* Media Queries */
+@media screen and (max-width: 768px) {
+    .about-grid {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .about h2 {
+        font-size: 2.5rem;
+    }
+}
+
+/* Cars Section */
+.cars {
+    padding: 50px 20px;
+    background-color: #f9f9f9;
+    text-align: center;
+}
+
+.cars h2 {
+    font-size: 2.5rem;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.car-card {
+    display: inline-block;
+    margin: 10px;
+    padding: 20px;
+    width: 300px;
+    background-color: #fff;
+    box-shadow: 0px 8px 15px rgba(0,0,0,0.1);
+    border-radius: 15px;
+    text-align: center;
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.car-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 10px;
+    margin-bottom: 15px;
+}
+
+.car-card h3 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
+.car-card p {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+}
+
+.car-card button {
+    padding: 10px 20px;
+    background-color: #FF6F61;
+    color: white;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.car-card button:hover {
+    background-color: #FF4A3D;
+    transform: scale(1.1);
+}
+
+.car-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0px 15px 20px rgba(0,0,0,0.2);
+}
+
+/* Booking Page */
+.booking-section {
+    padding: 50px 20px;
+    background-color: #f0f0f5;
+    animation: fadeIn 1.5s ease-in;
+    margin-top: 50px;
+}
+
+.booking-section .car-info {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.booking-section .car-info img {
+    width: 100%;
+    max-width: 400px;
+    height: auto;
+    border-radius: 15px;
+    margin-bottom: 20px;
+}
+
+.booking-section form {
+    max-width: 500px;
+    margin: 0 auto;
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0px 8px 15px rgba(0,0,0,0.1);
+}
+
+.booking-section label {
+    font-size: 1.1rem;
+    margin-bottom: 10px;
+    display: block;
+}
+
+.booking-section input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.booking-section button {
+    padding: 15px;
+    background-color: #FF6F61;
+    color: white;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    width: 100%;
+    transition: background-color 0.3s ease;
+}
+
+.booking-section button:hover {
+    background-color: #FF4A3D;
+}
+
+/* Confirmation Page */
+.confirmation {
+    text-align: center;
+    padding: 100px 20px;
+    animation: fadeIn 1.5s ease-in;
+}
+
+.confirmation h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+
+.confirmation p {
+    font-size: 1.3rem;
+    margin-bottom: 50px;
+}
+
+.confirmation span {
+    font-weight: bold;
+    color: #FF6F61;
+}
+
+.confirmation button {
+    padding: 15px 30px;
+    background-color: #FF6F61;
+    color: white;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.confirmation button:hover {
+    background-color: #FF4A3D;
+    transform: scale(1.05);
+}
+
+/* Media Queries for Responsiveness */
+@media screen and (max-width: 768px) {
+    .hero h1 {
+        font-size: 2.5rem;
+    }
+
+    .hero p {
+        font-size: 1.2rem;
+    }
+
+    .car-card {
+        width: 100%;
+        margin: 10px auto;
+    }
+
+    .cars h2 {
+        font-size: 2rem;
+    }
+
+    .confirmation h2 {
+        font-size: 2rem;
+    }
+}
+
+
+/* Footer */
+
+/* Footer Styles */
+footer {
+    background-color: #222;
+    padding: 50px 20px;
+    color: white;
+    position: relative;
+    text-align: center;
+}
+
+footer .footer-container {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+footer .footer-column {
+    flex: 1 1 200px;
+}
+
+footer h3 {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+    color: #FF6F61;
+}
+
+footer ul {
+    list-style: none;
+    padding: 0;
+}
+
+footer ul li {
+    margin-bottom: 10px;
+}
+
+footer ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.1rem;
+    transition: color 0.3s ease;
+}
+
+footer ul li a:hover {
+    color: #FF6F61;
+}
+
+/* Social Media Icons */
+footer .social-icons {
+    margin-top: 20px;
+}
+
+footer .social-icons a {
+    color: white;
+    margin: 0 10px;
+    font-size: 1.5rem;
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+footer .social-icons a:hover {
+    color: #FF6F61;
+    transform: scale(1.2);
+}
+
+/* Copyright */
+footer .footer-bottom {
+    margin-top: 40px;
+    padding-top: 20px;
+    border-top: 1px solid #444;
+    font-size: 1rem;
+    color: #aaa;
+}
+
+footer .footer-bottom a {
+    color: #FF6F61;
+    text-decoration: none;
+}
+
+footer .footer-bottom a:hover {
+    color: white;
+}
+
+/* Media Queries */
+@media screen and (max-width: 768px) {
+    footer .footer-container {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+
+/* Navbar Section */
+
+/* General Styling for the Navbar */
+.navbar {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    background-color: #222;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    z-index: 1000;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    transition: background-color 0.3s ease-in-out;
+}
+
+.navbar.scrolled {
+    background-color: #333; /* Darker when scrolling */
+}
+
+.navbar .logo {
+    font-size: 1.8rem;
+    color: #FF6F61;
+    font-weight: bold;
+    text-transform: uppercase;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.navbar .logo:hover {
+    color: #fff;
+}
+
+/* Nav Links Container */
+.navbar .nav-links {
+    display: flex;
+    list-style: none;
+    gap: 30px;
+    align-items: center;
+}
+
+.navbar .nav-links a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.2rem;
+    transition: color 0.3s ease;
+}
+
+.navbar .nav-links a:hover {
+    color: #FF6F61;
+}
+
+/* Reviews Section */
+
+/* Reviews Section */
+/* Reviews Section */
+#reviews {
+    background-color: #f1f1f1;
+    padding: 100px 20px;
+    position: relative;
+    overflow: hidden;
+    text-align: center;
+    background: linear-gradient(135deg, #FF6F61 0%, #FF9569 100%);
+}
+
+#reviews .section-title {
+    font-size: 2.5rem;
+    margin-bottom: 60px;
+    color: #fff;
+    position: relative;
+    animation: fadeInDown 1s ease-in-out;
+}
+
+/* Animated background effect for the section */
+#reviews:before {
+    content: "";
+    position: absolute;
+    top: -50px;
+    left: -50px;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(255,255,255,0.1), transparent);
+    animation: moveBackground 10s infinite linear;
+}
+
+/* Review Cards */
+.reviews-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    gap: 30px;
+}
+
+.review-card {
+    background-color: white;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    width: 300px;
+    padding: 30px;
+    position: relative;
+    overflow: hidden;
+    transform: translateY(50px);
+    opacity: 0;
+    animation: slideInUp 0.8s ease-in-out forwards;
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.review-card:hover {
+    transform: translateY(-10px) scale(1.05);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+}
+
+.review-content {
+    font-size: 1.1rem;
+    color: #666;
+    margin-bottom: 20px;
+    font-style: italic;
+    transition: color 0.3s ease;
+}
+
+.reviewer-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.reviewer-photo {
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
+    margin-bottom: 15px;
+    transition: transform 0.3s ease;
+}
+
+.review-card:hover .review-content {
+    color: #FF6F61;
+}
+
+.review-card:hover .reviewer-photo {
+    transform: rotate(360deg);
+}
+
+.reviewer-name {
+    font-size: 1.4rem;
+    color: #333;
+    margin-bottom: 5px;
+}
+
+.reviewer-role {
+    font-size: 1rem;
+    color: #999;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .reviews-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .review-card {
+        width: 90%;
+    }
+}
+
+/* Keyframe Animations */
+@keyframes slideInUp {
+    0% {
+        transform: translateY(50px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes fadeInDown {
+    0% {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Background animation */
+@keyframes moveBackground {
+    0% {
+        transform: translate(0, 0);
+    }
+    100% {
+        transform: translate(-50%, -50%);
+    }
+}
+
+
+
+
+
